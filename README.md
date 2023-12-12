@@ -141,7 +141,7 @@ To reproduce the analysis or contribute to the project:
 ## Folder Structure
 
 - `data/`: Contains the raw and processed datasets.
-- `notebooks/`: Jupyter notebooks for data analysis and visualization.
+- `capstone.ipynb`: Jupyter notebooks for data analysis and visualization.
 
 ## Dependencies
 
