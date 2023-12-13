@@ -18,6 +18,7 @@
   - [Recommendations](#recommendations)
   - [Getting Started](#getting-started)
   - [Folder Structure](#folder-structure)
+    - [Running the Notebook](#running-the-notebook)
   - [Dependencies](#dependencies)
   - [Citation](#citation)
 
@@ -140,8 +141,12 @@ To reproduce the analysis or contribute to the project:
 
 ## Folder Structure
 
-- `data/`: Contains the raw and processed datasets.
-- `capstone.ipynb`: Jupyter notebooks for data analysis and visualization.
+- `data/data.csv`: Contains the raw and processed datasets.
+- [capstone.ipynb](capstone.ipynb): Jupyter notebooks for data analysis and visualization.
+
+### Running the Notebook
+
+To run the analysis, ensure you have Python installed along with the necessary libraries. Execute the notebook sequentially to reproduce the analysis.
 
 ## Dependencies
 
