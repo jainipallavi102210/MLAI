@@ -80,13 +80,25 @@ The initial analysis involved the implementation of a basic Logistic Regression 
 
 Comparing the performance of K Nearest Neighbor, Logistic Regression, Decision Trees, and Support Vector Machines.
 
-**Logistic Regression:** The Logistic Regression model exhibited exceptional performance during training, achieving 100% accuracy. However, it slightly declined in test accuracy, reaching 99.99%. The training time for this model was relatively low, at 0.006988 seconds.
+**Model Performance:**
+* The Decision Tree model achieved the highest training accuracy of 99.16%, indicating strong performance on the training dataset.
+* Logistic Regression also performed well with high accuracy on both the training and test datasets.
 
-**K-Nearest Neighbors (KNN):** The KNN model demonstrated robust training accuracy of 98.81%, and its performance on the test set was also commendable, with an accuracy of 98.24%. The training time for KNN was reasonable, clocking in at 0.010437 seconds.
+**Training Time:**
+* Logistic Regression and K-Nearest Neighbors (KNN) have very low training times, suggesting they are computationally efficient.
+* SVM has a significantly higher training time, indicating a longer time required for model training.
 
-**Decision Tree:** The Decision Tree model showcased outstanding results, achieving 100% accuracy in both training and testing. Its training time was slightly higher than other models, at 0.023918 seconds, but the accuracy highlights its efficacy.
+**Accuracy:**
+* Logistic Regression and Decision Tree models show similar high accuracy on both training and test datasets.
+* KNN's test accuracy is slightly lower than its training accuracy, indicating a potential risk of overfitting.
+* SVM has a relatively high accuracy, but the training time is substantially higher compared to other models.
 
-**Support Vector Machine (SVM):** The SVM model displayed strong training accuracy at 99.02% and maintained a high level of accuracy on the test set, scoring 98.89%. However, it required a longer training time compared to other models, with a duration of 10.79 seconds.
+**Considerations:**
+* Depending on the specific requirements, trade-offs between model accuracy and training time may need to be considered.
+* Decision Tree appears promising with high accuracy, but further evaluation on unseen data is necessary to assess its generalization capability.
+* The choice of the model may depend on the application's sensitivity to training time and the desired balance between speed and accuracy.
+  
+In summary, the Decision Tree and Logistic Regression models seem promising, each with its own strengths. Consideration should be given to the specific needs of the application, including the trade-off between accuracy and training time.
 
 Each model's test accuracy performed better than the baseline accuracy of approximately 77.31%.
 
