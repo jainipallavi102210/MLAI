@@ -92,44 +92,69 @@ Each model's test accuracy performed better than the baseline accuracy of approx
 
 ## Improving the Model and the comparisons
 
+
 **Logistic Regression:**
-- Best Hyperparameters: {'C': 0.01, 'max_iter': 500, 'penalty': 'l1', 'solver': 'liblinear'}
-- Best Train Score: 1.0
-- Best Test Score: 1.0
-- Top Features: 'qualcomm' (7.084334), 'mhneeds' (1.925120), 'SC_AGE_YEARS' (0.018890)
+- Best Hyperparameters: {'C': 0.1, 'max_iter': 500, 'penalty': 'l2', 'solver': 'lbfgs'}
+- Best Train Score: 0.9351312941083142
+- Best Test Score: 0.9345459373340415
+- Top Features: 'SC_K2Q10' (3.813769), 'SC_K2Q13' (3.126394), 'SC_K2Q22' (0.809958), 'SC_SEX' (0.283347), 'TOTKIDS_R' (-0.148502)
 
 **K-Nearest Neighbors (KNN):**
-- Best Hyperparameters: {'n_neighbors': 2, 'weights': 'distance'}
-- Best Train Score: 0.9893876840652229
-- Best Test Score: 0.9908390865639937 
-- Top Features: 'qualnum' (0.0796), 'mhneeds' (0.0398), 'HHCOUNT' (0.0123), 'FAMCOUNT' (0.0116), 'rxmeds' (0.0043), 'MOMAGE' (0.0038)
+- Best Hyperparameters: {'n_neighbors': 4, 'weights': 'uniform'}
+- Best Train Score: 0.8963810889533648
+- Best Test Score: 0.9022835900159321
+- Top Features: 'SC_K2Q10' (0.117140), 'SC_K2Q13' (0.023294), 'HHCOUNT' (0.018255), 'SC_AGE_YEARS' (0.014432), 'SC_K2Q22' (0.013522)
 
 **Support Vector Machine (SVM):**
-- Best Hyperparameters: {'C': 0.01, 'kernel': 'linear'}
-- Best Train Score: 1.0
-- Best Test Score: 1.0
+- Best Hyperparameters: {'C': 0.1, 'kernel': 'linear'}
+- Best Train Score: 0.9368953494231477
+- Best Test Score: 0.9366702071163038
 
 **Decision Tree:**
-- Best Hyperparameters: {'criterion': 'gini', 'max_depth': 1, 'max_features': None, 'min_samples_leaf': 1, 'min_samples_split': 2}
-- Best Train Score: 1.0
-- Best Test Score: 1.0
-- Top Features: 'qualcomm' (1.0)
+- Best Hyperparameters: {'criterion': 'gini', 'max_depth': 6, 'max_features': None, 'min_samples_leaf': 4, 'min_samples_split': 5}
+- Best Train Score: 0.9489302780777947
+- Best Test Score: 0.945432819968136
+- Top Features: 'SC_K2Q10' (0.717427), 'SC_K2Q22' (0.167411), 'SC_K2Q13' (0.075588), 'SC_K2Q16' (0.015330), 'SC_AGE_YEARS' (0.011022)
 
 **Observations:** 
-1. Logistic Regression and Decision Tree models achieved perfect accuracy on both training and test sets, suggesting potential overfitting.
-2. K-Nearest Neighbors (KNN) performed well with a test accuracy of 99.08%, indicating a good generalization.
-3. Support Vector Machine (SVM) also demonstrated perfect accuracy on both training and test sets.
-4. Logistic Regression's top features include 'qualcomm', 'mhneeds', and 'SC_AGE_YEARS', with 'qualcomm' having the highest importance.
-5. K-Nearest Neighbors (KNN) top features include 'qualnum', 'mhneeds', 'HHCOUNT', 'FAMCOUNT', 'rxmeds', and 'MOMAGE'.
-6. Further analysis may be needed to address potential overfitting in Logistic Regression and Decision Tree models.
+
+1. Logistic Regression:
+
+* Achieved a high train and test score, indicating good generalization.
+* Top features include 'SC_K2Q10' and 'SC_K2Q13,' which seem to have a significant impact.
+
+2. K-Nearest Neighbors (KNN):
+
+* Moderate performance with slightly lower scores compared to logistic regression.
+* Notable features include 'SC_K2Q10' and 'SC_K2Q13.'
+
+3. Support Vector Machine (SVM):
+
+* Demonstrates high train and test scores, suggesting robust performance.
+* Utilizes linear kernel with 'C' value of 0.1.
+
+4. Decision Tree:
+
+* Excellent performance on both train and test sets, with a high test score.
+* Key features include 'SC_K2Q10' and 'SC_K2Q22.'
 
 ## Recommendations
 
-Analysis may be needed to address potential overfitting in Logistic Regression and Decision Tree models.
+1. **Model Selection:**
 
-**Regularization for Logistic Regression:**  Apply regularization techniques such as L1 or L2 regularization to penalize large coefficients and prevent overfitting. This can be achieved by adjusting the regularization parameter (C) in Logistic Regression.
+The Decision Tree model seems to perform exceptionally well. Consider it as a strong candidate for the final model.
 
-**Consider Alternate Models:** Explore other machine learning algorithms that may be less prone to overfitting for your specific dataset. Experimenting with different models, such as ensemble methods or regularized linear models, can provide insights.
+2. **Feature Importance:**
+
+'SC_K2Q10' is consistently an important feature across all models. Further investigate its significance and potential impact on predictions.
+
+3. **Fine-Tuning:**
+
+Fine-tune hyperparameters of the selected model(s) to see if further improvements can be achieved. For instance, try adjusting the depth of the Decision Tree or the 'C' value in SVM.
+
+4. **Validation:**
+
+Validate the model(s) on an independent dataset to ensure the generalization of performance and to avoid overfitting.
 
 
 ## Getting Started
